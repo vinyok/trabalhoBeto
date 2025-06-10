@@ -6,7 +6,7 @@ def exibir_menu():
         
         print("1. Cadastrar novo evento")
         print("2. Cadastrar novo participante")
-        print("3. Listar eventos")
+        print("3. Exibir eventos disponíveis")
         print("4. Buscar participante")
         print("5. Gerar relatórios")
         print("6. Exibir todos os participantes")

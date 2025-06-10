@@ -1,1 +1,1 @@
-participantes = []
+participantes = {}
