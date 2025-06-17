@@ -27,7 +27,12 @@ def adicionar_participante_no_evento(nome_evento, codigo_cpf):
 def listar_eventos():
     if not eventos:
         print('Nenhum evento cadastrado. ')
-    
+    else:
+        print(f'Todos os eventos cadastrados até o momento: {eventos}')
+        
+def procurar_participante(cpf):
+    if cpf not in participantes:
+        ('Participante não encontrado. ')
     
 
         
