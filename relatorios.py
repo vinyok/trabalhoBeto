@@ -50,4 +50,9 @@ def taxa_media_participacao_por_tema(eventos):
         media = participacao_por_tema[tema] / eventos_por_tema[tema]
         print(f"- {tema}: {media:.2f} participantes por evento")
 
-def menu_relatorios ():
+def menu_relatorios(participantes, eventos):
+    limpar_tela()
+    gerar_relatorios(participantes, eventos)
+    contar_eventos_por_tema(eventos)
+    taxa_media_participacao_por_tema(eventos)
+    input("\nPressione Enter para voltar ao menu principal...")

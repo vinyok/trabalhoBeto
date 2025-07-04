@@ -31,20 +31,3 @@ def remover_evento(eventos):
             print(f"Evento '{nome}' removido com sucesso!")
             return
     print("Evento não encontrado ou senha incorreta.")
-
-
-def atualizar_tema_evento(eventos):
-    nome = input("Digite o nome do evento que deseja atualizar o tema: ")
-    senha = input("Digite a senha do evento: ")
-
-    for evento in eventos:
-        if evento["nome"] == nome and evento["senha"] == senha:
-            print(f"Tema atual: {evento['tema']}")
-            novo_tema = input("Digite o novo tema: ")
-            if novo_tema.strip():
-                evento["tema"] = novo_tema
-                print("Tema atualizado com sucesso!")
-            else:
-                print("Tema não foi alterado.")
-            return
-    print("Evento não encontrado ou senha incorreta.")
