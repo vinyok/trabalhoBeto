@@ -1,3 +1,5 @@
+from util.limpar_tela import limpar_tela
+
 def gerar_relatorios(participantes, eventos):
     if not eventos:
         print("Não há eventos para gerar relatório.")
@@ -47,3 +49,5 @@ def taxa_media_participacao_por_tema(eventos):
     for tema in participacao_por_tema:
         media = participacao_por_tema[tema] / eventos_por_tema[tema]
         print(f"- {tema}: {media:.2f} participantes por evento")
+
+def menu_relatorios ():

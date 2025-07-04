@@ -1,3 +1,28 @@
+def cadastrar_participante_em_evento(participantes, eventos):
+    cpf_participante = input("Digite o CPF do participante: ")
+    evento_nome = input("Digite o nome do evento: ")
+    
+    for p in participantes:
+        if p["codigo"] == cpf_participante:
+            participante_nome = p["nome"]
+            break
+    else:
+        print("Participante não encontrado.")
+        return
+    for e in eventos:
+        if e["nome"].lower() == evento_nome.lower():
+            evento_atual = e
+            break
+    else:
+        print("Evento não encontrado.")
+        return
+    if cpf_participante in evento_atual["participantes"]:
+        print(f"O participante '{participante_nome}' já está inscrito no evento '{evento_atual['nome']}'.")
+        return
+    evento_atual["participantes"].append(cpf_participante)
+    print(f"Participante '{participante_nome}' foi cadastrado no evento '{evento_atual['nome']}' com sucesso!")
+
+
 def adicionar_participante(participantes):
     nome = input("Digite o primeiro e o último nome do participante: ")
     
@@ -5,6 +30,7 @@ def adicionar_participante(participantes):
     for participante in participantes:
         if participante["codigo"] == codigo_cpf:
             print("CPF já cadastrado!")
+            return
         
     email = input("Digite o e-mail do participante: ")
     for participante in participantes:

@@ -1,6 +1,9 @@
-from participantes import adicionar_participante, buscar_participante, listar_participantes, remover_participante ,atualizar_participante, listar_eventos_que_participante_esta_cadastrado
-from eventos import adicionar_eventos, listar_eventos, listar_eventos_por_tema, remover_evento, atualizar_tema_evento
+from participantes import adicionar_participante, buscar_participante, listar_participantes, remover_participante ,atualizar_participante, listar_eventos_que_participante_esta_cadastrado, cadastrar_participante_em_evento
+
+from eventos import adicionar_eventos, listar_eventos, remover_evento, atualizar_tema_evento
+
 from util.limpar_tela import limpar_tela
+
 from relatorios import gerar_relatorios, contar_eventos_por_tema, taxa_media_participacao_por_tema
 
 def exibir_menu():
@@ -13,16 +16,16 @@ def exibir_menu():
     print('3. Listar participantes')
     print('4. Buscar participante')
     print('5. Listar eventos')
-    print('6. Listar eventos por tema')
-    print('7. Gerar relatórios')
-    print('8. Remover participante')
-    print('9. Atualizar informações de um participante')
-    print('10. Remover evento')
+    print('6. Gerar relatórios')
+    print('7. Remover participante')
+    print('10. Atualizar informações de um participante')
+    print('11. Remover evento')
     print('11. Atualizar tema de evento')
     print('12. Listar eventos que o participante está cadastrado')
     print('13. Contar eventos por tema')
     print('14. Calcular taxa média de participação por tema')
     print('0. Sair')
+    
     print("="*40)
 
     entrada_user = input('Digite um número para escolher a opção: ')    
@@ -31,8 +34,7 @@ def exibir_menu():
     else:
         print('Entrada inválida. Digite um número.')
         return -1
-    
-    
+
 def main():
     participantes = []
     eventos = []
@@ -43,7 +45,6 @@ def main():
         3: lambda: listar_participantes(participantes),
         4: lambda: buscar_participante(participantes),
         5: lambda: listar_eventos(eventos),
-        6: lambda: listar_eventos_por_tema(eventos),
         7: lambda: gerar_relatorios(participantes, eventos),
         8: lambda: remover_participante(participantes),
         9: lambda: atualizar_participante(participantes),

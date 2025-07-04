@@ -20,15 +20,6 @@ def listar_eventos (eventos, *args, **kwargs):
         for evento in eventos:
             print(f"Nome do evento: {evento['nome']} - Data do evento: {evento['data']} - Tema do evento: {evento['tema']}")
 
-def listar_eventos_por_tema(eventos):
-    tema = input("Digite o tema para filtrar os eventos: ")
-    eventos_filtrados = [e for e in eventos if e["tema"].lower() == tema.lower()]
-    if eventos_filtrados:
-        print(f"\nEventos com o tema '{tema}':")
-        for e in eventos_filtrados:
-            print(f"- Nome: {e['nome']} | Data: {e['data']} | Local: {e['local']}")
-    else:
-        print(f"Nenhum evento encontrado com o tema '{tema}'.")
 
 def remover_evento(eventos):
     nome = input("Digite o nome do evento a ser removido: ")
